@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navigation from './components/Navigation';
 import Homepage from './pages/HomePage';
+import MoviesPage from './pages/MoviesPage';
+import CharactersPage from './pages/CharactersPage';
 
 const App = () => {
   return (
@@ -12,8 +14,8 @@ const App = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/movies" element={<p>Movies</p>} />
-          <Route path="/characters" element={<p>Characters</p>} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/characters" element={<CharactersPage />} />
         </Routes>
       </Container>
     </div>
