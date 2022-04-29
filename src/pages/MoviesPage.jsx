@@ -22,29 +22,16 @@ const MoviesPage = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className="d-flex flex-wrap justify-content-center">
+      <div>
         {movies &&
           movies.results.map((movie) => (
-            <div
-              key={movie.episode_id}
-              className="card border-danger m-4 col-md-3"
-            >
-              <div className="card-header d-flex">
-                <h5>{movie.title}</h5>
+            <Link to={`/movies/${getIdFromUrl(movie.url)}`}>
+              <div key={movie.episode_id} className="card border-danger">
+                <div className="card-header  ">
+                  <h5 className="text-center">{movie.title}</h5>
+                </div>
               </div>
-
-              <div className="card-body">
-                <p>Episode: {movie.episode_id}</p>
-                <hr />
-                <p>Released: {movie.release_date}</p>
-                <hr />
-                <p>Characters: {movie.characters.length}</p>
-
-                <Link to={`/films/${getIdFromUrl(movie.url)}`}>
-                  <button className="btn btn-danger">More information</button>
-                </Link>
-              </div>
-            </div>
+            </Link>
           ))}
       </div>
     </>

@@ -28,12 +28,12 @@ export default function Characters() {
   return (
     <>
       {loading && <Loading />}
-      <div className="d-flex flex-wrap justify-content-center">
+      <div>
         {characters.map((character, index) => (
-          <div key={index} className="card border-secondary m-3 col-md-3">
+          <div key={index} className="card border-danger m-2">
             <Link to={`/characters/${getIdFromUrl(character.url)}`}>
-              <div className="card-header d-flex">
-                <h2>{character.name}</h2>
+              <div className="card-header">
+                <h5 className="text-center">{character.name}</h5>
               </div>
             </Link>
           </div>
