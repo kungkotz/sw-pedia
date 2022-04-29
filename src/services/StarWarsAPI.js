@@ -5,7 +5,7 @@ axios.defaults.baseURL = 'https://swapi.dev/api';
 
 /**
  *
- * Get all movies
+ * Get all movies from SWAPI
  */
 
 const getMovies = async () => {
@@ -14,7 +14,7 @@ const getMovies = async () => {
 };
 
 /**
- *  Get all characters
+ *  Get all characters from SWAPI
  */
 
 const getCharacters = async (page) => {
@@ -22,7 +22,26 @@ const getCharacters = async (page) => {
   return res.data;
 };
 
+/**
+ *  Get a single characters from SWAPI
+ */
+const getCharacter = async (id) => {
+  const res = await axios.get(`/people/${id}`);
+  return res.data;
+};
+
+/**
+ * Get a single movie from SWAPI
+ */
+
+const getMovie = async (id) => {
+  const res = await axios.get(`/films/${id}`);
+  return res.data;
+};
+
 export default {
   getMovies,
   getCharacters,
+  getMovie,
+  getCharacter,
 };
