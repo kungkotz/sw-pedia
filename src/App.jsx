@@ -5,7 +5,9 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Homepage from './pages/HomePage';
 import MoviesPage from './pages/MoviesPage';
+import MoviePage from './pages/MoviePage';
 import CharactersPage from './pages/CharactersPage';
+import CharacterPage from './pages/CharacterPage';
 
 const App = () => {
   return (
@@ -15,7 +17,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/characters" element={<CharactersPage />} />
+          <Route path="/characters/:id" element={<CharacterPage />} />
         </Routes>
       </Container>
     </div>
