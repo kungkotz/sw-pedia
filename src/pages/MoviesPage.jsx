@@ -19,14 +19,15 @@ const MoviesPage = () => {
   useEffect(() => {
     fetchMovies();
   }, []);
+
   return (
     <>
       {loading && <Loading />}
-      <div>
+      <div className="main-container ">
         {movies &&
           movies.results.map((movie) => (
             <Link to={`/movies/${getIdFromUrl(movie.url)}`}>
-              <div key={movie.episode_id} className="card border-danger">
+              <div key={movie.episode_id} className="card border-danger m-2">
                 <div className="card-header  ">
                   <h5 className="text-center">{movie.title}</h5>
                 </div>

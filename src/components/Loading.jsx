@@ -1,7 +1,8 @@
+import loading from '../assets/images/loading.gif';
 export default function Loading() {
   return (
-    <>
-      <h1 className="text-bold text-center mt-5">Loading...</h1>
-    </>
+    <div className="loading-container text-center mt-5 pt-5">
+      <img className=" rounded-circle" src={loading} alt="Loading gif" />
+    </div>
   );
 }

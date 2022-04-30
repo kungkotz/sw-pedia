@@ -28,7 +28,7 @@ export default function Characters() {
   return (
     <>
       {loading && <Loading />}
-      <div>
+      <div className="main-container">
         {characters.map((character, index) => (
           <div key={index} className="card border-danger m-2">
             <Link to={`/characters/${getIdFromUrl(character.url)}`}>
@@ -41,12 +41,12 @@ export default function Characters() {
       </div>
 
       {!loading && (
-        <div className="d-flex justify-content-between align-items-center p-4">
+        <div className="d-flex justify-content-between align-items-center p-4 ">
           <button
             disabled={!data.previous}
             onClick={() => setPage((prevValue) => prevValue - 1)}
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-danger"
           >
             Previous Page
           </button>
@@ -57,7 +57,7 @@ export default function Characters() {
             disabled={!data.next}
             onClick={() => setPage((prevValue) => prevValue + 1)}
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-danger"
           >
             Next Page
           </button>
