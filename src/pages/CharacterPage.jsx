@@ -26,9 +26,9 @@ export default function CharacterPage() {
     <>
       {loading && <Loading />}
 
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center main-container">
         {details && (
-          <div className="card m-4 character-character-card">
+          <div className="card m-4 text-center">
             <h3 className="card-header text-dark">{details.name}</h3>
 
             <div className="card-body ">
@@ -66,7 +66,7 @@ export default function CharacterPage() {
               ))}
             </ul>
 
-            <div className="">
+            <div className="text-center">
               <button
                 type="button"
                 className="btn btn-danger "
