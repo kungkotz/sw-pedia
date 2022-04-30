@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import StarWarsAPI from '../services/StarWarsAPI';
 import { getIdFromUrl } from '../helpers/extractId';
@@ -11,29 +11,33 @@ export default function MoviePage() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const fetchMovie = async () => {
-    setLoading(true);
-    const data = await StarWarsAPI.getMovie(id);
-    setDetails(data);
-    setCharacters(data.characters);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchMovie = async () => {
+      setLoading(true);
+      const data = await StarWarsAPI.getMovie(id);
+      setDetails(data);
+      setCharacters(data.characters);
+      setLoading(false);
+    };
     fetchMovie(id);
-  });
+  }, [id]);
 
   return (
     <>
       {loading && <Loading />}
-
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center main-container">
         {details && (
-          <div className="card m-4 character-character-card">
+          <div className="card m-4 text-center">
             <h1 className="card-header text-dark">{details.title}</h1>
-            <h4 className="card-header text-dark">{details.director}</h4>
-            <h4 className="card-header text-dark">{details.producer}</h4>
-            <h4 className="card-header text-dark">{details.release_date}</h4>
+            <h4 className="card-header text-dark">
+              Director: {details.director}
+            </h4>
+            <h4 className="card-header text-dark">
+              Producer: {details.producer}
+            </h4>
+            <h4 className="card-header text-dark">
+              Released: {details.release_date}
+            </h4>
             <ul className="list-group list-group-flush">
               {characters.map((character) => (
                 <Link
@@ -47,10 +51,10 @@ export default function MoviePage() {
               ))}
             </ul>
 
-            <div className="">
+            <div className="text-center">
               <button
                 type="button"
-                className="btn btn-danger "
+                className="btn btn-danger"
                 onClick={() => navigate(-1)}
               >
                 Go back
