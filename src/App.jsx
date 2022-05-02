@@ -8,6 +8,7 @@ import MoviesPage from './pages/MoviesPage';
 import MoviePage from './pages/MoviePage';
 import CharactersPage from './pages/CharactersPage';
 import CharacterPage from './pages/CharacterPage';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/characters" element={<CharactersPage />} />
           <Route path="/characters/:id" element={<CharacterPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
     </div>
