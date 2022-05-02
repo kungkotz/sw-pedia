@@ -6,9 +6,9 @@ export default function HomePage() {
       </h3>
 
       <h4 className="text-white text-center">
-        Your tiny wiki to the Star Wars Saga, to the upper right corner you can
-        chose between Movies and Characters. Click on one of them to learn more
-        about them.
+        Your tiny wiki to the Star Wars Saga, in the upper right corner you can
+        find more information about the Star Wars movies and characters. Click
+        on any of them to learn more.
       </h4>
     </>
   );
